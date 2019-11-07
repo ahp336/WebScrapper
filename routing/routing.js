@@ -13,24 +13,24 @@ module.exports = function (app) {
   // A GET route for scraping the Rolling Stones website
   app.get("/scrape", function (req, res) {
     // First, we grab the body of the html with axios
-    axios.get("https://www.rollingstone.com/politics/").then(function (response) {
+    axios.get("https://worldanimalnews.com/").then(function (response) {
       // Then, we load that into cheerio and save it to $ for a shorthand selector
       var $ = cheerio.load(response.data);
 
       // Now, we grab every h2 within an article tag, and do the following:
-      $("header.c-card__header").each(function (i, element) {
+      $("div.td_module_3 td_module_wrap td-animation-stack").each(function (i, element) {
         // Save an empty result object
         var result = {};
 
         // Add the text and href of every link, and save them as properties of the result object
         result.title = $(this)
-          .children('h3')
-          .text();
+          .children('a')
+          .attr('title');
         result.intro = $(this)
           .children('p')
           .text();
         result.link = $(this)
-          .parent('a')
+          .children('a')
           .attr('href');
         console.log(result);
 

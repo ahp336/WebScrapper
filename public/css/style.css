@@ -1,0 +1,43 @@
+* {
+    font-size: 16pt
+}
+
+body { 
+  background-color:whitesmoke;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+header {
+  color: lightseagreen;
+  text-align: center;
+}
+#wrapper {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: #fff;
+}
+#articles {
+  display: inline-block;
+  overflow: auto;
+  width: 75%;
+  height: 400px;
+}
+#notes {
+  float: right;
+  width: 20%;
+}
+textarea, input {
+  display: block;
+  width: 100%;
+}
+input {
+  height: 30px;
+}
+textarea {
+  height: 150px;
+}
+
+.card {
+  border-radius: 0;
+}
